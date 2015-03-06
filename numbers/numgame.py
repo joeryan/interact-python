@@ -1,28 +1,28 @@
 # template for "Guess the number" mini-project
 # input will come from buttons and an input field
 # all output for the game will be printed in the console
+import random
 
-
+target = 0
+max_range = 100
 
 # helper function to start and restart the game
 def new_game():
-    # initialize global variables used in your code here
-
-    # remove this when you add your code    
-    pass
+    global target
+    target = random.randint(0, max_range)
 
 
 # define event handlers for control panel
 def range100():
-    # button that changes the range to [0,100) and starts a new game 
+    global max_range 
+    max_range = 100
+    new_game()
     
-    # remove this when you add your code    
-    pass
 
 def range1000():
-    # button that changes the range to [0,1000) and starts a new game     
-    
-    pass
+    global max_range
+    max_range = 1000
+    new_game()
     
 def input_guess(guess):
     # main game logic goes here	
@@ -38,7 +38,11 @@ def input_guess(guess):
 
 
 # call new_game 
-new_game()
-
-
+if __name__ == "__main__":
+    new_game()
+    print(target)
+    range1000()
+    print(target)
+    range100()
+    print(target)
 # always remember to check your completed program against the grading rubric
