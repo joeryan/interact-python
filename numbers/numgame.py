@@ -3,13 +3,24 @@
 # all output for the game will be printed in the console
 import random
 
-target = 0
+secret_number = 0
 max_range = 100
+guess_message = "Number range 0 - 100"
+remaining_guesses = 7
 
 # helper function to start and restart the game
 def new_game():
-    global target
-    target = random.randint(0, max_range)
+    global secret_number
+    global remaining_guesses
+    
+    secret_number = random.randint(0, max_range)
+    if max_range == 100:
+        remaining_guesses = 7
+    else:
+        remaining_guesses = 10
+    print("New game. " + guess_message)
+    remaining()
+
 
 
 # define event handlers for control panel
@@ -39,10 +50,7 @@ def input_guess(guess):
 
 # call new_game 
 if __name__ == "__main__":
-    new_game()
-    print(target)
-    range1000()
-    print(target)
-    range100()
-    print(target)
-# always remember to check your completed program against the grading rubric
+
+# http://www.codeskulptor.org/#user39_xebz8UsTuy_7.py
+
+
