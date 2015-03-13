@@ -12,6 +12,12 @@ class NumgameTestCase(unittest.TestCase):
         self.assertTrue(game.target >= 0)
         self.assertTrue(game.target <= 100)
 
+    def test_range1000(self):
+        game = numgame.NumGame()
+        game.range1000()
+        self.assertTrue(game.target >= 0)
+        self.assertTrue(game.target <= 1000)
+ 
 if __name__ == "__main__":
     unittest.main()
 
