@@ -23,8 +23,14 @@ class NumGame:
     self.max_range = 1000
     self.new_game()
     
-  def input_guess(self, guess):
-    print guess
+  def check_guess(self, guess):
+    if (guess < self.target): 
+      return -1
+    elif (guess > self.target):
+      return 1
+    else:
+      return 0
+
     # main game logic goes here	
     
 # create frame for graphical game play

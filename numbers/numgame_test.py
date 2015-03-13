@@ -18,10 +18,20 @@ class NumgameTestCase(unittest.TestCase):
         self.assertTrue(game.target >= 0)
         self.assertTrue(game.target <= 1000)
 
-    def test_check_guess(self):
+    def test_check_guess_actual(self):
         game = numgame.NumGame()
         game.target = 55
-        self.assertTrue(game.input_guess(55) == 0)
+        self.assertTrue(game.check_guess(55) == 0)
+ 
+    def test_check_guess_lower(self):
+        game = numgame.NumGame()
+        game.target = 55
+        self.assertTrue(game.check_guess(54) == -1)
+ 
+    def test_check_guess_higher(self):
+        game = numgame.NumGame()
+        game.target = 55
+        self.assertTrue(game.check_guess(56) == 1)
  
 if __name__ == "__main__":
     unittest.main()
