@@ -24,12 +24,10 @@ class NumGame:
     self.new_game()
     
   def check_guess(self, guess):
-    if (guess < self.target): 
-      return -1
-    elif (guess > self.target):
-      return 1
-    else:
-      return 0
+    return guess - self.target
+
+
+
 
     
 # create frame for graphical game play
