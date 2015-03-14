@@ -27,15 +27,6 @@ class NumGame:
     return guess - self.target
 
 
-
-
-    
-# create frame for graphical game play
-
-
-# register event handlers for control elements and start frame
-
-
 # call new_game 
 if __name__ == "__main__":
     # http://www.codeskulptor.org/#user39_xebz8UsTuy_7.py
@@ -46,3 +37,4 @@ if __name__ == "__main__":
     game.range100()
     print(game.target)
 
+# always remember to check your completed program against the grading rubric

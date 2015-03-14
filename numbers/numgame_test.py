@@ -4,9 +4,8 @@ import numgame
 
 class NumgameTestCase(unittest.TestCase):
     def setUp(self):
-        pass
+        pass 
 
-        
     def test_new_game_100(self):
         #  game.new_game()
         game = numgame.NumGame()
