@@ -1,28 +1,17 @@
 # tests for number guessing game numgame.py
 import unittest
-from numgame import *
+import numgame
 
 class NumgameTestCase(unittest.TestCase):
     def setUp(self):
-<<<<<<< HEAD
-       new_game()
+        pass
 
-    def test_new_game(self):
-        self.assertTrue((target >= 0) & (target <= 100))
-
-    def test_range1000(self):
-        range1000()
-        self.assertTrue(max_range == 1000)
         
-=======
-        pass 
-
     def test_new_game_100(self):
         #  game.new_game()
         game = numgame.NumGame()
         self.assertTrue(game.target >= 0)
         self.assertTrue(game.target <= 100)
->>>>>>> a35fdb67b5fc861aeb580887e9021774ca45d280
 
     def test_range1000(self):
         game = numgame.NumGame()
