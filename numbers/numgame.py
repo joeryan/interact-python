@@ -5,24 +5,16 @@ import random
 
 
 class NumGame:
-  def  __init__(self):
-    self.max_range = 100
+  def  __init__(self, secret_range=100):
+    self.max_range = secret_range
     self.target =  random.randint(0, self.max_range)
 #    self.new_game()
 
   # helper function to start and restart the game
-  def new_game(self):
+  def new_game(self, secret_range=100):
+    self.max_range = secret_range
     self.target = random.randint(0, self.max_range)
 
-  # define event handlers for control panel
-  def range100(self):
-    self.max_range = 100
-    self.new_game()
-
-  def range1000(self):
-    self.max_range = 1000
-    self.new_game()
-    
   def check_guess(self, guess):
     return guess - self.target
 
@@ -32,9 +24,12 @@ if __name__ == "__main__":
     # http://www.codeskulptor.org/#user39_xebz8UsTuy_7.py
     game = NumGame()
     print(game.target)
-    game.range1000()
+    print(game.max_range)
+    game.new_game(1000)
+    print(game.max_range)
     print(game.target)
-    game.range100()
+    game.new_game(100)
+    print(game.max_range)
     print(game.target)
 
 # always remember to check your completed program against the grading rubric
