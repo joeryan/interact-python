@@ -15,19 +15,25 @@ class PongGame(tk.Frame):
     def createWidgets(self):
         self.quitButton = tk.Button(self, text = 'Quit',
                                     command=self.quit)
-        self.playArea = tk.Canvas(bg='black', height=self.FLD_H, 
+        self.fld = tk.Canvas(bg='black', height=self.FLD_H, 
                                   width = self.FLD_W)
-        self.playArea.grid(padx=25, pady=15)
+        self.fld.grid(padx=25, pady=15)
         self.quitButton.grid()
-        left_gut = self.playArea.create_line(self.PAD_W, 0, self.PAD_W, self.FLD_H, 
-                                             width = 2, fill  = 'white')
-        right_gut = self.playArea.create_line((self.FLD_W - self.PAD_W), 0,
-                                              (self.FLD_W - self.PAD_W), 
-                                             self.FLD_H, width = 2, fill  = 'white')
-        center_line = self.playArea.create_line((self.FLD_W/2), 0,
-                                              (self.FLD_W/2), self.FLD_H, 
-                                              width = 2, fill  = 'white')
-
+        l_gut = self.fld.create_line(self.PAD_W, 0, self.PAD_W, self.FLD_H, 
+                                     width = 2, fill  = 'white')
+        r_gut = self.fld.create_line((self.FLD_W - self.PAD_W), 0,
+                                     (self.FLD_W - self.PAD_W), 
+                                     self.FLD_H, width = 2, fill  = 'white')
+        c_line = self.fld.create_line((self.FLD_W/2), 0,
+                                      (self.FLD_W/2), self.FLD_H, 
+                                      width = 2, fill  = 'white')
+        l_pad = self.fld.create_rectangle(0, self.FLD_H/2+self.PAD_H/2, 
+                                          self.PAD_W, self.FLD_H/2-self.PAD_H/2,
+                                          outline="white", fill="white",width = 2)
+        r_pad = self.fld.create_rectangle(self.FLD_W, self.FLD_H/2+self.PAD_H/2, 
+                                          self.FLD_W - self.PAD_W, self.FLD_H/2 -
+                                          self.PAD_H/2, outline ="white", 
+                                          fill="white", width = 2)
 def main():
     pong = PongGame()
     pong.master.geometry("1240x820+300+300")
