@@ -6,6 +6,8 @@ class PongGame(tk.Frame):
     FLD_W = 1150
     PAD_H = 80
     PAD_W = 20
+    score1 = 0
+    score2 = 0
 
     def __init__(self, master=None):
         tk.Frame.__init__(self, master)
@@ -34,6 +36,7 @@ class PongGame(tk.Frame):
                                           self.FLD_W - self.PAD_W, self.FLD_H/2 -
                                           self.PAD_H/2, outline ="white", 
                                           fill="white", width = 2)
+
 def main():
     pong = PongGame()
     pong.master.geometry("1240x820+300+300")
