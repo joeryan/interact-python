@@ -1,8 +1,10 @@
 import sys, pygame
+import time
+
 pygame.init()
 
 size = width, height = 640, 480
-speed = [2, 2]
+speed = [1, 1]
 black = 0, 0, 0
 
 screen = pygame.display.set_mode(size)
@@ -15,6 +17,7 @@ while 1:
         if event.type == pygame.QUIT: sys.exit()
 
     ballrect = ballrect.move(speed)
+    time.sleep(0.001)
     if ballrect.left < 0 or ballrect.right > width:
         speed[0] = -speed[0]
     if ballrect.top < 0 or ballrect.bottom > height:
